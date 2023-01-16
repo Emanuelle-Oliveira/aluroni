@@ -31,7 +31,7 @@ export default function Menu () {
           <Filters filter={filter} setFilter={setFilter} /* Passa as props filtro e setFiltro para os filtros*//>
           <Order order={order} setOrder={setOrder} /* Passa as props order e setOrder para o ordenador*//>
         </div>
-        <Items/>
+        <Items search={search} filter={filter} order={order} />
       </section>
     </main>
   )
