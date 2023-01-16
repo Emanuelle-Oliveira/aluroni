@@ -4,6 +4,7 @@ import {useState} from "react";
 import Search from "./search";
 import Filters from "./filters";
 import Order from "./order";
+import Items from "./items";
 
 export default function Menu () {
   // State para a busca
@@ -30,6 +31,7 @@ export default function Menu () {
           <Filters filter={filter} setFilter={setFilter} /* Passa as props filtro e setFiltro para os filtros*//>
           <Order order={order} setOrder={setOrder} /* Passa as props order e setOrder para o ordenador*//>
         </div>
+        <Items/>
       </section>
     </main>
   )

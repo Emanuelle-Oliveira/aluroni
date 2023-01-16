@@ -3,6 +3,7 @@ import styles from "./Filters.module.scss";
 import React from "react";
 import classNames from "classnames";
 
+// Atribui o tipo do objeto filter (do json) para o novo tipo IOption
 type IOption = typeof filters[0];
 
 interface Props {
