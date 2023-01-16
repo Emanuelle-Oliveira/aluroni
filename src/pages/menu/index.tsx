@@ -2,10 +2,16 @@ import styles from './Menu.module.scss';
 import { ReactComponent as Logo } from 'assets/logo.svg';
 import {useState} from "react";
 import Search from "./search";
+import Filters from "./filters";
+import Order from "./order";
 
 export default function Menu () {
   // State para a busca
   const [search, setSearch] = useState("");
+  // State para filtros
+  const [filter, setFilter] = useState <number | null> (null);
+  // State para ordenador
+  const [order, setOrder] = useState ("");
 
   return (
     <main>
@@ -20,6 +26,10 @@ export default function Menu () {
       <section className={styles.menu}>
         <h3 className={styles.menu__title}>Cardápio</h3>
         <Search search={search} setSearch={setSearch} /* Passa as props busca e setBusca para o buscador *//>
+        <div className={styles.menu__filters}>
+          <Filters filter={filter} setFilter={setFilter} /* Passa as props filtro e setFiltro para os filtros*//>
+          <Order order={order} setOrder={setOrder} /* Passa as props order e setOrder para o ordenador*//>
+        </div>
       </section>
     </main>
   )

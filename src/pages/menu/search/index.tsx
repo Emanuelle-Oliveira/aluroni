@@ -14,6 +14,7 @@ export default function Search({ search, setSearch }: Props) {
         value={search}
         // Passa o valor do input para o setBusca
         onChange={(event) => setSearch(event.target.value)}
+        placeholder="Buscar"
       />
       <CgSearch size={20} color="#4C4D5E"/>
     </div>
