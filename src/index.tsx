@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import 'normalize.css'
-import Menu from "./pages/menu";
+import 'normalize.css';
+import AppRouter from './routes';
+
+//const currentComponent = window.location.pathname === '/' ? <Start/> : <Menu/>;
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,6 +12,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-   <Menu/>
+    <AppRouter/>
   </React.StrictMode>
 );

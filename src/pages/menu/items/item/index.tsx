@@ -1,6 +1,6 @@
 import styles from './Item.module.scss';
-import menu from '../items.json';
-import classNames from "classnames";
+import menu from '../../../../data/menu.json';
+import classNames from 'classnames';
 
 type Props = typeof menu[0];
 
@@ -27,7 +27,7 @@ export default function Item(props: Props) {
             {size}g
           </div>
           <div className={styles.item__quantitypeople}>
-            Serve {serving} pessoa{serving === 1 ? "" : "s" /* Caso sirva mais de 1 pessoa, acrescenta o s em pessoa */}
+            Serve {serving} pessoa{serving === 1 ? '' : 's' /* Caso sirva mais de 1 pessoa, acrescenta o s em pessoa */}
           </div>
           <div className={styles.item__value}>
             R$ {price.toFixed(2) /*.00*/ }
@@ -35,5 +35,5 @@ export default function Item(props: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,18 +1,18 @@
 import styles from './Menu.module.scss';
 import { ReactComponent as Logo } from 'assets/logo.svg';
-import {useState} from "react";
-import Search from "./search";
-import Filters from "./filters";
-import Order from "./order";
-import Items from "./items";
+import {useState} from 'react';
+import Search from './search';
+import Filters from './filters';
+import Order from './order';
+import Items from './items';
 
 export default function Menu () {
   // State para a busca
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   // State para filtros
   const [filter, setFilter] = useState <number | null> (null);
   // State para ordenador
-  const [order, setOrder] = useState ("");
+  const [order, setOrder] = useState ('');
 
   return (
     <main>
@@ -34,7 +34,7 @@ export default function Menu () {
         <Items search={search} filter={filter} order={order} />
       </section>
     </main>
-  )
+  );
 }
 
 //<img src={logo} alt="logo do aluroni"/>
