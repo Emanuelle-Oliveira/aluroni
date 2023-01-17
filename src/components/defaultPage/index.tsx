@@ -1,8 +1,10 @@
 import styles from './DefaultPage.module.scss';
 import { Outlet } from 'react-router-dom';
 import stylesTheme from 'styles/Theme.module.scss';
+import React from 'react';
 
-export default function DefaultPage() {
+// Children é opcional, pois só exite em uma situação especifica
+export default function DefaultPage({ children } : { children?: React.ReactNode}) {
   return (
     <>
       <header className={styles.header}>
@@ -12,6 +14,7 @@ export default function DefaultPage() {
       </header>
       <div className={stylesTheme.container}>
         <Outlet /* Children do react router dom */ />
+        {children /* Para possibilitar que não tenha header no notFound */}
       </div>
     </>
   );

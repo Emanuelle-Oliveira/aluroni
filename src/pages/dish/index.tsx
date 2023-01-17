@@ -2,6 +2,8 @@ import styles from './Dish.module.scss';
 import {useNavigate, useParams} from 'react-router-dom';
 import menu from 'data/menu.json';
 import TagsDish from '../../components/tagsDish';
+import NotFound from '../notFound';
+import DefaultPage from '../../components/defaultPage';
 
 export default function Dish() {
   //console.log(useParams());  Pega os parâmetros da url (id)
@@ -13,17 +15,17 @@ export default function Dish() {
 
   // Procura no array qual item tem o id igual ao passado na url
   const dish = menu.find(item => item.id === Number(id));
-  // Se o prato não for encontrado retorna uma string vazia
+  // Se o prato não for encontrado retorna NotFound
   if(!dish) {
-    return '';
+    return (<NotFound/>);
   }
 
   return(
-    <div>
+    <DefaultPage /* Só adiciona o header quando o prato é encontrado */>
+      <button className={styles.back} onClick={() => navigate(-1)}>
+        {'< Voltar'}
+      </button>
       <section className={styles.container}>
-        <button className={styles.back} onClick={() => navigate(-1)}>
-          {'< Voltar'}
-        </button>
         <h1 className={styles.title}>
           {dish.title}
         </h1>
@@ -37,6 +39,38 @@ export default function Dish() {
           <TagsDish {...dish}/>
         </div>
       </section>
-    </div>
+    </DefaultPage>
   );
 }
+
+// Outra solução para não aparecer o header no notFound
+/*
+
+Dentro do return:
+<Routes>
+  <Route path="*" element={<DefaultPage/>}>
+    <Route index element={
+      <>
+        <button className={styles.back} onClick={() => navigate(-1)}>
+        {'< Voltar'}
+        </button>
+        <section className={styles.container}>
+          <h1 className={styles.title}>
+            {dish.title}
+          </h1>
+          <div className={styles.image}>
+            <img src={dish.photo} alt={dish.title} />
+          </div>
+          <div className={styles.content}>
+            <p className={styles.content__description}>
+              {dish.description}
+            </p>
+            <TagsDish {...dish}/>
+          </div>
+        </section>
+        </DefaultPage>
+      </>
+    } />
+  </Route>
+</Routes>
+ */

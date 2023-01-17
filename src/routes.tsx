@@ -20,8 +20,8 @@ export default function AppRouter() {
             <Route index element={<Start/>} /* index = proprio path / = Start */ />
             <Route path='menu' element={<Menu/>} />
             <Route path='about' element={<About/>} />
-            <Route path='dish/:id' element={<Dish/>} /* Insere o id na rota */ />
           </Route>
+          <Route path='dish/:id' element={<Dish/>} /* Insere o id na rota */ />
           <Route path='*' element={<NotFound/>}/>
         </Routes>
         <Footer/>

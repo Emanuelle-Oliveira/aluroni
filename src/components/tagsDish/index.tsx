@@ -11,7 +11,7 @@ export default function TagsDish({ category, size, serving, price } : Dish) {
       })}>
         {category.label}
       </div>
-      <div className={styles.portion}>
+      <div className={styles.tags__portion}>
         {size}g
       </div>
       <div className={styles.tags__quantitypeople}>
