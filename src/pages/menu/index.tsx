@@ -4,7 +4,7 @@ import Search from './search';
 import Filters from './filters';
 import Order from './order';
 import Items from './items';
-import Navbar from '../../components/navbar';
+import stylesTheme from 'styles/Theme.module.scss';
 
 export default function Menu () {
   // State para a busca
@@ -16,7 +16,7 @@ export default function Menu () {
 
   return (
     <section className={styles.menu}>
-      <h3 className={styles.menu__title}>Cardápio</h3>
+      <h3 className={stylesTheme.title}>Cardápio</h3>
       <Search search={search} setSearch={setSearch} /* Passa as props busca e setBusca para o buscador *//>
       <div className={styles.menu__filters}>
         <Filters filter={filter} setFilter={setFilter} /* Passa as props filtro e setFiltro para os filtros*//>

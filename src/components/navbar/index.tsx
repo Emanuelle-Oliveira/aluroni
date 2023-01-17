@@ -12,7 +12,7 @@ export default function Navbar() {
     to: '/menu'
   }, {
     label: 'Sobre',
-    to: 'sobre'
+    to: '/about'
   }];
   return (
     <nav className={styles.navbar}>

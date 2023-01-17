@@ -1,6 +1,7 @@
 import menu from 'data/menu.json';
 import styles from './Start.module.scss';
-import Navbar from '../../components/navbar';
+import stylesTheme from 'styles/Theme.module.scss';
+import ourHome from 'assets/nossa_casa.png';
 
 export default function Start() {
   let recommendedDishes = [...menu]; // Coloca todos os itens do menu no array pratos recomendados
@@ -9,7 +10,7 @@ export default function Start() {
 
   return (
     <section>
-      <h3 className={styles.title}>
+      <h3 className={stylesTheme.title}>
         Recomendações da cozinha
       </h3>
       <div className={styles.recommendations}>
@@ -23,6 +24,13 @@ export default function Start() {
             </button>
           </div>
         ))}
+      </div>
+      <h3 className={stylesTheme.title}> Nossa casa </h3>
+      <div className={styles.ourHome}>
+        <img src={ourHome} alt="Casa do aluroni"/>.
+        <div className={styles.ourHome__address}>
+          Rua Vergueiro, 3185 <br/> <br/> Vila Mariana - SP
+        </div>
       </div>
     </section>
   );
