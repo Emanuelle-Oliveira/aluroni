@@ -2,6 +2,7 @@ import menu from '../../../data/menu.json';
 import Item from './item';
 import styles from './Items.module.scss';
 import {useEffect, useState} from 'react';
+import {Menu} from '../../../types/dish';
 
 interface Props {
   search: string,
@@ -27,7 +28,7 @@ export default function Items({ search, filter, order }: Props) {
   }
 
   // Ordena de acordo com o select
-  function orderBy(newList: typeof menu){ // Define o tipo como um array de objetos com seus atributos já determinados no json
+  function orderBy(newList: Menu){ // Define o tipo como um array de objetos com seus atributos já determinados no json
     switch (order) {
     // Ordena usando o tamanho da porção, retorna 1 para a>b e -1 para a<b
     case 'porcao':
