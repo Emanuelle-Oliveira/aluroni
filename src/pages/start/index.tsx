@@ -1,5 +1,6 @@
 import menu from 'data/menu.json';
 import styles from './Start.module.scss';
+import Navbar from '../../components/navbar';
 
 export default function Start() {
   let recommendedDishes = [...menu]; // Coloca todos os itens do menu no array pratos recomendados
@@ -22,7 +23,6 @@ export default function Start() {
             </button>
           </div>
         ))}
-
       </div>
     </section>
   );

@@ -12,6 +12,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <AppRouter/>
+    <AppRouter /* Renderiza oq está em routes */ />
   </React.StrictMode>
 );
