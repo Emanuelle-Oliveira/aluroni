@@ -53,9 +53,10 @@ export default function Items({ search, filter, order }: Props) {
 
   return (
     <div className={styles.items}>
-      {list.map(item => ( // Roda o array menu(json), buscando cada item
+      {list.map((item) => ( // Roda o array menu(json), buscando cada item
+        // Index com key não é ideal para listas não estaticas
         <Item
-          key={item.id}
+          key={item.id} // Auxilia na comparação o dom real e o virtual, não é prop
           {...item} // Envia todas as informações (atributos) do item
         />
       ))}

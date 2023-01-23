@@ -1,6 +1,6 @@
 import styles from './Order.module.scss';
 import options from './options.json';
-import React, {useState} from 'react';
+import React, {memo, useState} from 'react';
 import classNames from 'classnames';
 import {MdKeyboardArrowDown, MdKeyboardArrowUp} from 'react-icons/md';
 
@@ -9,7 +9,7 @@ interface Props {
   setOrder: React.Dispatch<React.SetStateAction<string>>
 }
 
-export default function Order({ order, setOrder } : Props) {
+function Order({ order, setOrder } : Props) {
   const[open, setOpen] = useState(false);
   // Procura entre as opções qual possui o value igual ao order atual, guardando o nome desse ordenador
   const nameOrder = order && options.find(option => option.value === order)?.name;
@@ -46,3 +46,5 @@ export default function Order({ order, setOrder } : Props) {
     </button>
   );
 }
+
+export default memo(Order);

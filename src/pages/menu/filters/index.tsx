@@ -1,6 +1,6 @@
 import filters from './filters.json';
 import styles from './Filters.module.scss';
-import React from 'react';
+import React, {memo} from 'react';
 import classNames from 'classnames';
 
 // Atribui o tipo do objeto filter (do json) para o novo tipo IOption
@@ -11,7 +11,7 @@ interface Props {
   setFilter: React.Dispatch<React.SetStateAction<number | null>>
 }
 
-export default function Filters({ filter, setFilter } : Props) {
+function Filters({ filter, setFilter } : Props) {
   // Ao clicar em das opções de filtros
   function selectFilter(option: IOption) {
     // Caso o mesmo filtro seja clicado novamente, filtro recebe null
@@ -40,3 +40,5 @@ export default function Filters({ filter, setFilter } : Props) {
     </div>
   );
 }
+
+export default memo(Filters);

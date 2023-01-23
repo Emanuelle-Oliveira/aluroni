@@ -14,8 +14,18 @@ export default function Menu () {
   // State para ordenador
   const [order, setOrder] = useState ('');
 
+  //const teste = 'olá aluno';
+
   return (
     <section className={styles.menu}>
+      {/*
+      Ao clicar não muda o h1 na tela, pois não é um state
+      <h1 onClick={() => {
+        teste = 'hello world';
+        console.log(teste);
+      }>
+        {teste}
+      </h1>*/}
       <h3 className={stylesTheme.title}>Cardápio</h3>
       <Search search={search} setSearch={setSearch} /* Passa as props busca e setBusca para o buscador *//>
       <div className={styles.menu__filters}>

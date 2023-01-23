@@ -2,10 +2,15 @@ import styles from './Item.module.scss';
 import {Dish} from '../../../../types/dish';
 import TagsDish from '../../../../components/tagsDish';
 import {useNavigate} from 'react-router-dom';
+import {memo} from 'react';
 
-
-export default function Item(props: Dish) {
+function Item(props: Dish) {
   const { id, title, description, photo } = props;
+  // É renderizado 2 vezes
+  // States são imutaveis
+  // A função set “destrói” completamente o estado anterior
+  // e cria um estado totalmente novo.
+  //(id === 5) && console.log(title);
   const navigate = useNavigate();
   return (
     <div
@@ -25,3 +30,13 @@ export default function Item(props: Dish) {
     </div>
   );
 }
+// Evita renderizações desnecessárias
+// Indicada para listas e coisas que devem aparecer e sumir da tela
+// Aceita 2 parametros
+// Compara as props anteriores e as proximas props,
+// e só renderiza se forem diferentes
+// false -> diferentes, true -> iguais
+export default memo(Item, /*(previousProps, nextProps) => {
+  console.log(previousProps, nextProps);
+  return true;
+}*/);
